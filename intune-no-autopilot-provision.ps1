@@ -13,7 +13,7 @@ $user = whoami
 net localgroup "Administrators" $user /delete
 
 $serial = Get-Ciminstance -classname win32_bios | select -expandproperty serialnumber
-$computername = "MG-" + $serial
+$computername = $serial
 rename-computer -newname $computername -force
 
 
