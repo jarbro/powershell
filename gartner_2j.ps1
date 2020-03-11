@@ -1,18 +1,3 @@
-<#
-Gartner 2020 - Jared Brodsky - jared.brodsky@cyberark.com - 3/11/2020
-Scenario 2 (j): Run the following test and benchmark the time it takes to execute: A very simple program on Windows that, when run, 
-appends one line to one local file, another line to a different local file, changes one registry entry to a simple value of your choosing,
-and changes another registry entry to another simple value. Execute this program 1,000 times in a loop as a local administrator 
-(NOT using your PEDM / Windows least privilege agent). Note the number of seconds that this iteration of 1,000 executions took. Now,
-configure your agent-based PEDM solution to: 
-(1) allow running this executable under elevated permissions, 
-(2) allow the writing to the first file 
-(3) disallow writing to the second file, 
-(4) allow the change to the first registry entry and 
-(5) disallow the change to the second registry entry. 
-Run the program again for 1,000 times, ensuring that privilege elevation (and filtering of the respective file/registry operations) take place. 
-Time how long this took, and attach the results here. NOTE: If your solution is unable to filter specific file/registry entries, please note that fact. 
-#>
 Set-ExecutionPolicy -force bypass
 $loopcount = 1000
 # create stopwatch
